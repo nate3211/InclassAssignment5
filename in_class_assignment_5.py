@@ -5,43 +5,43 @@
 # All 3 files "In_class_assignment_5.py", "numbers.txt", and "sorted.txt" should all be added to your github repository and submitted as a github link.
 
 import re
-
+# Quicksort function 
 def quicksort(numbers_in_a_list):
     if len(numbers_in_a_list) <= 1:
         return numbers_in_a_list
     else:
         pivot = numbers_in_a_list[0]
         small = []
-        big = []
-        for i in range(1,len(numbers_in_a_list)):
-            if numbers_in_a_list[i] < pivot:
-                small.append(numbers_in_a_list[i])
-            if numbers_in_a_list[i] > pivot:
-                big.append(numbers_in_a_list[i])
-        return quicksort(small) + [pivot] + quicksort(big)
+        large = []
+        for z in range(1,len(numbers_in_a_list)):
+            if numbers_in_a_list[z] < pivot:
+                small.append(numbers_in_a_list[z])
+            if numbers_in_a_list[z] > pivot:
+                large.append(numbers_in_a_list[z])
+        return quicksort(small) + [pivot] + quicksort(large)
     '''
      source: https://stackoverflow.com/questions/20175380/quick-sort-python-recursion
     ''' 
-    
+# Function for reading numbers    
 def read(fileinput):
     list_number = []
     with open(fileinput) as file_object:
         line = file_object.readline()
         number = re.findall("[0-9]+", line)
-        for x in number:
-            x = int(x)
-            list_number.append(x)
+        for z in number:
+            z = int(z)
+            list_number.append(z)
     return list_number
 
-
+# Write output into sorted.txt
 def write(fileoutput, number):
     with open(fileoutput, "w") as sorted_output:
-        for x in quicksort(number):
-            x = str(x)
-            sorted_output.write(f"{x}\n")
+        for z in quicksort(number):
+            z = str(z)
+            sorted_output.write(f"{z}\n")
    
 
-
+# Main function
 def main():
     number = read("numbers.txt")
     return write("sorted.txt", number)
