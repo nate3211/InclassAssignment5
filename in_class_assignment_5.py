@@ -20,8 +20,8 @@ def quicksort(numbers_in_a_list):
                 large.append(numbers_in_a_list[z])
         return quicksort(small) + [pivot] + quicksort(large)
     '''
-     source: https://stackoverflow.com/questions/20175380/quick-sort-python-recursion
-    ''' 
+     source from: https://stackoverflow.com/questions/20175380/quick-sort-python-recursion
+    '''  
 # Function for reading numbers    
 def read(fileinput):
     list_number = []
