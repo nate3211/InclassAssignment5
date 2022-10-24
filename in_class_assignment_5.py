@@ -32,6 +32,9 @@ def read(fileinput):
             z = int(z)
             list_number.append(z)
     return list_number
+    '''
+    https://vegibit.com/how-to-read-and-write-files-in-python
+    '''
 
 # Write output into sorted.txt
 def write(fileoutput, number):
